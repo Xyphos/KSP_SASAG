@@ -1,7 +1,7 @@
 ﻿// 
 //  MIT License
 //  
-//  Copyright (c) 2018 William "Xyphos" Scott
+//  Copyright (c) 2017-2019 William "Xyphos" Scott (TheGreatXyphos@gmail.com)
 //  
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -21,19 +21,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-namespace SASAG
+#pragma warning disable IDE0060 // Remove unused parameter
+namespace XyphosAerospace
 {
     // ReSharper disable once InconsistentNaming
+    // ReSharper disable once UnusedMember.Global
+    // ReSharper disable once IdentifierTypo
     public class SASAG : PartModule
     {
         [KSPAction(guiName = "SAS Toggle")]
-        public void SetToggle() => vessel.ActionGroups.ToggleGroup(group: KSPActionGroup.SAS);
+        public void SetToggle() => vessel.ActionGroups.ToggleGroup(@group: KSPActionGroup.SAS);
 
         [KSPAction(guiName = "SAS Enable")]
-        public void SetEnabled() => vessel.ActionGroups.SetGroup(group: KSPActionGroup.SAS, active: true);
+        public void SetEnabled() => vessel.ActionGroups.SetGroup(@group: KSPActionGroup.SAS, active: true);
 
         [KSPAction(guiName = "SAS Disable")]
-        public void SetDisabled() => vessel.ActionGroups.SetGroup(group: KSPActionGroup.SAS, active: false);
+        public void SetDisabled() => vessel.ActionGroups.SetGroup(@group: KSPActionGroup.SAS, active: false);
 
         [KSPAction(guiName = "SAS Stability Assist")]
         public void SetStabilityAssist(KSPActionParam param) => SetSAS(mode: VesselAutopilot.AutopilotMode.StabilityAssist);
@@ -80,11 +83,11 @@ namespace SASAG
                 return;
             }
             
-            vessel.ActionGroups.SetGroup(group: KSPActionGroup.SAS, active: true); // turn on SAS
+            vessel.ActionGroups.SetGroup(@group: KSPActionGroup.SAS, active: true); // turn on SAS
             vessel.Autopilot.Enable(mode: mode);                          // set SAS mode
         }
 
 
-        public override string GetInfo() => "Allows SAS to be contolled with Action Groups";
+        public override string GetInfo() => "Allows SAS to be controlled with Action Groups";
     }
 }
