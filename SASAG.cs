@@ -21,6 +21,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+using KSP.Localization;
+
 #pragma warning disable IDE0060 // Remove unused parameter
 namespace XyphosAerospace
 {
@@ -82,7 +84,8 @@ namespace XyphosAerospace
                 ScreenMessages.PostScreenMessage(message: $"Vessel cannot set SAS to {mode}");
                 return;
             }
-            
+
+      
             vessel.ActionGroups.SetGroup(@group: KSPActionGroup.SAS, active: true); // turn on SAS
             vessel.Autopilot.Enable(mode: mode);                          // set SAS mode
         }

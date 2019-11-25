@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="license.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +111,7 @@
     <None Include=".git\refs\remotes\origin\HEAD" />
     <None Include="app.config" />
     <None Include="LICENSE" />
+    <None Include="SASAG.cfg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\objects\info\" />
