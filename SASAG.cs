@@ -32,13 +32,13 @@ namespace XyphosAerospace
     public class SASAG : PartModule
     {
         [KSPAction(guiName = "SAS Toggle")]
-        public void SetToggle() => vessel.ActionGroups.ToggleGroup(@group: KSPActionGroup.SAS);
+        public void SetToggle(KSPActionParam param) => vessel.ActionGroups.ToggleGroup(@group: KSPActionGroup.SAS);
 
         [KSPAction(guiName = "SAS Enable")]
-        public void SetEnabled() => vessel.ActionGroups.SetGroup(@group: KSPActionGroup.SAS, active: true);
+        public void SetEnabled(KSPActionParam param) => vessel.ActionGroups.SetGroup(@group: KSPActionGroup.SAS, active: true);
 
         [KSPAction(guiName = "SAS Disable")]
-        public void SetDisabled() => vessel.ActionGroups.SetGroup(@group: KSPActionGroup.SAS, active: false);
+        public void SetDisabled(KSPActionParam param) => vessel.ActionGroups.SetGroup(@group: KSPActionGroup.SAS, active: false);
 
         [KSPAction(guiName = "SAS Stability Assist")]
         public void SetStabilityAssist(KSPActionParam param) => SetSAS(mode: VesselAutopilot.AutopilotMode.StabilityAssist);
